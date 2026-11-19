@@ -1,6 +1,7 @@
 package ru.yaharuott.servhack.adapter.in.web.excursion;
 
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.yaharuott.servhack.adapter.in.web.excursion.dto.AddExcursion;
 import ru.yaharuott.servhack.adapter.in.web.excursion.dto.ExcursionResponse;
@@ -28,4 +29,10 @@ public class ExcursionController {
         return service.getExcursions();
     }
 
+
+    @StaffOnly
+    @DeleteMapping("/{id}")
+    public void deleteExcursionById(@PathVariable  Long id){
+        service.deleteExcursion(id);
+    }
 }

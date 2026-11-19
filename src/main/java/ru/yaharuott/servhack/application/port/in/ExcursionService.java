@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ExcursionService {
     List<ExcursionResponse> getExcursions();
-
+    void deleteExcursion(Long id);
     ExcursionResponse addExcursion(AddExcursion excursion);
 }
