@@ -25,6 +25,7 @@ public interface GroupRepository extends JpaRepository<Group, Long> {
         ORDER BY g.visitDate ASC
     """)
 
-    List<Group> findAllByExcursionId(Long excursionId);
     List<GroupSummaryResponse> findAllGroupsSummary();
+
+    List<Group> findAllByExcursionId(Long excursionId);
 }
